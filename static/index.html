@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DataPilot - Autopilot for Data Science</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="app-container">
+      <header id="main-header">
+        <div class="logo-container">
+          <div class="logo-icon">DP</div>
+          <h1 class="app-title">DataPilot</h1>
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#" class="active">Dashboard</a></li>
+            <li><a href="#">Experiments</a></li>
+            <li><a href="#">Settings</a></li>
+          </ul>
+        </nav>
+        <div class="user-profile">
+          <span class="username">User</span>
+          <div class="avatar">U</div>
+        </div>
+      </header>
+
+      <div id="main-layout">
+        <aside id="sidebar">
+          <div class="sidebar-section">
+            <h3>Recent Experiments</h3>
+            <ul class="experiment-list" id="experiment-list">
+              <li>Loading...</li>
+            </ul>
+          </div>
+          <div class="sidebar-section">
+            <h3>Quick Actions</h3>
+            <button class="btn-primary" id="new-experiment-btn">
+              New Experiment
+            </button>
+          </div>
+        </aside>
+
+        <main id="content-area">
+          <section id="chat-interface">
+            <div class="chat-history" id="chat-history">
+              <div class="message system">
+                <div class="message-content">
+                  Welcome to DataPilot. How can I help you today?
+                </div>
+              </div>
+            </div>
+            <div class="chat-input-area">
+              <textarea
+                id="user-input"
+                placeholder="Describe your experiment goal..."
+              ></textarea>
+              <button id="send-btn">Send</button>
+            </div>
+          </section>
+
+          <section id="workspace">
+            <div class="tabs">
+              <button class="tab active" data-target="code-view">Code</button>
+              <button class="tab" data-target="logs-view">Logs</button>
+              <button class="tab" data-target="results-view">Results</button>
+            </div>
+            <div class="tab-content" id="code-view">
+              <pre><code class="language-python" id="code-display"># Generated code will appear here</code></pre>
+            </div>
+            <div class="tab-content hidden" id="logs-view">
+              <div id="logs-display">No logs available.</div>
+            </div>
+            <div class="tab-content hidden" id="results-view">
+              <div id="results-display">No results available.</div>
+            </div>
+          </section>
+        </main>
+      </div>
+
+      <footer id="main-footer">
+        <div class="status-bar">
+          <span class="status-item"
+            ><span class="status-indicator online"></span> Ready</span
+          >
+          <span class="status-item">Model: Gemini 2.5 Pro</span>
+        </div>
+      </footer>
+    </div>
+    <script src="/static/script.js"></script>
+  </body>
+</html>
